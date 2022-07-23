@@ -1,0 +1,50 @@
+﻿<!--Страница регистрации-->
+@{
+Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WebTatIntek.Models
+@model RegisterViewModel
+
+<section>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title" style="text-align: center;">
+                              <h2>Регистрация </h2>    
+                         </div>
+                    </div>
+                   <div class="footer-info newsletter-form">
+                    <!---->
+                    <div class="form-group" style="max-width: 400px; margin: auto;"> 
+                        <p style="color:red">@ViewBag.Message</p>
+                         <form asp-controller="Account" asp-action="Registration" method="post">
+                             
+                             <span asp-validation-for="FirstName" style="color:red" ></span>
+                             <input type="text" asp-for="FirstName" class="form-control" placeholder="Введите Имя"/>
+                             
+                             <span asp-validation-for="LastName" style="color:red" ></span>
+                             <input type="text" asp-for="LastName" class="form-control" placeholder="Введите Фамилия"/>
+
+                             <span asp-validation-for="Login" style="color:red" ></span>
+                             <input type="text" asp-for="Login" class="form-control" placeholder="Введите логин"/>
+                             
+                             <span asp-validation-for="Password" style="color:red"></span> 
+                             <input type="password" asp-for="Password" class="form-control" placeholder="Введите пароль"/>
+                             
+                             <span asp-validation-for="PasswordConfirm" style="color:red"></span> 
+                             <input type="password" asp-for="PasswordConfirm" class="form-control" placeholder="Повторите пароль"/><br/>
+                             
+                             <input type="submit" value="Зарегистрироваться" /> 
+                         </form><br />
+                         
+                    </div></div>
+                    <!---->
+
+               </div>
+          </div>
+</section>
+
+
+
+
